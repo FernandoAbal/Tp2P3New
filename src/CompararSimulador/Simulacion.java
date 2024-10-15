@@ -25,6 +25,14 @@ public class Simulacion extends SwingWorker<Long, Long> {
 		this.resultJTextField = resultJTextField;
 	}
 
+	@Override
+	protected Long doInBackground() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+/*
 //en la clase grafo agregue los metodos que devuelven el tiempo de ejecucion	
 //pero algunas llamadas a los metodos que se usan tipo prim estan mal
 //por eso tira error aca
@@ -142,4 +150,4 @@ public class Simulacion extends SwingWorker<Long, Long> {
 //	});
 //	return botonCancelar;
 //}
-//
+//*/

@@ -28,6 +28,7 @@ public class VentanaRegistros {
 	public JButton buttonCargarPredeterminado;
 	public JButton buttonEjecutarPrim;
 	public JButton buttonEjecutarKruskal;
+	public JButton buttonLimpiarMapa;
 
 	public VentanaRegistros() {
 		initialize();
@@ -137,6 +138,10 @@ public class VentanaRegistros {
 		JLabel lblNewLabel_8 = new JLabel("CREAR VERTICE");
 		lblNewLabel_8.setBounds(13, 11, 99, 14);
 		frame.getContentPane().add(lblNewLabel_8);
+		
+		buttonLimpiarMapa = new JButton("LIMPIAR MAPA");
+		buttonLimpiarMapa.setBounds(349, 352, 112, 23);
+		frame.getContentPane().add(buttonLimpiarMapa);
 		
 		frame.setVisible(true);
 	}
