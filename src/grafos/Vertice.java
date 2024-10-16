@@ -77,9 +77,9 @@ public class Vertice {
 	public String getLista() {
 		StringBuilder sb = new StringBuilder();
 		for(String s: enlacesDisponibles.keySet()) {
-			sb.append(s + ", peso de la arista: -> " +enlacesDisponibles.get(s) + "\n");
+			sb.append(s + ", peso de la arista: -> " +enlacesDisponibles.get(s).getPeso() + "\n");
 		}
-		sb.append("Arista menor peso: " + getVerticeConAristaMenorPeso() +  "-> " + enlacesDisponibles.get(getVerticeConAristaMenorPeso()) + "\n");
+		sb.append("Arista menor peso: " + getVerticeConAristaMenorPeso() +  "-> " + enlacesDisponibles.get(getVerticeConAristaMenorPeso()).getPeso() + "\n");
 		return sb.toString();
 	}
 	

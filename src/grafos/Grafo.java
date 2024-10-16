@@ -86,27 +86,5 @@ public class Grafo {
 		Vertice vert = listaDeVertices.get(vertice);
 		return vert.getListaDeAristas().values();
 	}
-	
-//	public static long tiempoEjecucionPrim(Grafo grafo) {
-//		long tiempoInicio, tiempoFin;
-//
-//		tiempoInicio = System.nanoTime();
-//		Prim(grafo);
-//		tiempoFin = System.nanoTime();
-//
-//		return tiempoFin - tiempoInicio;
-//	}
-//
-//	public static long tiempoEjecucionKruskal(Grafo grafo) {
-//		long tiempoInicio, tiempoFin;
-//
-//		List<Arista> aristas = vertice.getListaDeAristas();
-//		tiempoInicio = System.nanoTime();
-//
-//		Kruskal(grafo, aristas);
-//		tiempoFin = System.nanoTime();
-//
-//		return tiempoFin - tiempoInicio;
-//	}
-	
+
 }
