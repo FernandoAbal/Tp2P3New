@@ -147,23 +147,5 @@ public class GrafoTest {
 		assertEquals(2, vecinos.size());
 	}
 
-//    @Test
-//    public void testTiempoEjecucionPrim() {
-//        grafo.crearVertice("A", coordenadasA);
-//        grafo.crearVertice("B", coordenadasB);
-//        grafo.agregarArista("A", "B", 10);
-//
-//        long tiempo = Grafo.tiempoEjecucionPrim(grafo);
-//        assertTrue(tiempo > 0);
-//    }
 
-//    @Test
-//    public void testTiempoEjecucionKruskal() {
-//        grafo.crearVertice("A", coordenadasA);
-//        grafo.crearVertice("B", coordenadasB);
-//        grafo.agregarArista("A", "B", 10);
-//
-//        long tiempo = Grafo.tiempoEjecucionKruskal(grafo);
-//        assertTrue(tiempo > 0);
-//    }
 }

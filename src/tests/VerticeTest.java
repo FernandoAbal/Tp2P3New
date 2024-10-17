@@ -66,7 +66,7 @@ public class VerticeTest {
 		verticeA.agregarArista(verticeB.getNombre(), aristaAB);
 
 		assertTrue(verticeA.contieneArista(verticeB.getNombre()));
-		assertFalse(verticeA.contieneArista("C")); // No debería contener la arista C
+		assertFalse(verticeA.contieneArista("C")); 
 	}
 
 	@Test
@@ -87,16 +87,14 @@ public class VerticeTest {
 
 		assertEquals("C", verticeA.getVerticeConAristaMenorPeso());
 	}
-	
-//	 @Test
-//	    public void getListaTest() {
-//	        String expected = 
-//	            "B, peso de la arista: -> {o: A, d: B, p: 2}\n" +
-//	            "C, peso de la arista: -> {o: A, d: C, p: 2}\n" +
-//	            "Arista menor peso: B-> {o: A, d: B, p: 2}\n"; 
-//
-//	        assertEquals(expected, verticeA.getLista());
-//	    }
+
+	@Test
+	public void getListaTest() {
+		String expected = "B, peso de la arista: -> {o: A, d: B, p: 2}\n"
+				+ "C, peso de la arista: -> {o: A, d: C, p: 2}\n" + "Arista menor peso: B-> {o: A, d: B, p: 2}\n";
+
+		assertEquals(expected, verticeA.getLista());
+	}
 
 	@Test
 	public void getInfoTest() {

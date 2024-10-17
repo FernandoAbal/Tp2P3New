@@ -1,7 +1,6 @@
 package tests;
 
 import static org.junit.Assert.*;
-import org.junit.Before;
 import org.junit.Test;
 import org.openstreetmap.gui.jmapviewer.Coordinate;
 
@@ -14,26 +13,37 @@ import java.util.ArrayList;
 
 public class KruskalTest {
 
-	private Grafo grafo;
-	private ArrayList<Arista> aristas;
+    @Test
+    public void testKruskal() {
+        Vertice verticeA = new Vertice("A", new Coordinate(0, 0));
+        Vertice verticeB = new Vertice("B", new Coordinate(1, 1));
+        Vertice verticeC = new Vertice("C", new Coordinate(2, 2));
+        Vertice verticeD = new Vertice("D", new Coordinate(3, 3));
 
-	@Before
-	public void setUp() {
-		grafo = new Grafo();
-		aristas = new ArrayList<>();
+        Arista aristaAB = new Arista(verticeA, verticeB, 1);
+        Arista aristaAC = new Arista(verticeA, verticeC, 2);
+        Arista aristaBD = new Arista(verticeB, verticeD, 3);
+        Arista aristaCD = new Arista(verticeC, verticeD, 4);
 
-		grafo.crearVertice("A", new Coordinate(0, 0));
-		grafo.crearVertice("B", new Coordinate(1, 1));
-		grafo.crearVertice("C", new Coordinate(2, 2));
-		grafo.crearVertice("D", new Coordinate(3, 3));
+        Grafo grafoInicial = new Grafo();
+        grafoInicial.crearVertice(verticeA.getNombre(), verticeA.getCoordenadas());
+        grafoInicial.crearVertice(verticeB.getNombre(), verticeB.getCoordenadas());
+        grafoInicial.crearVertice(verticeC.getNombre(), verticeC.getCoordenadas());
+        grafoInicial.crearVertice(verticeD.getNombre(), verticeD.getCoordenadas());
 
-		aristas.add(new Arista(new Vertice("A", new Coordinate(0, 0)), new Vertice("B", new Coordinate(1, 1)), 4));
-		aristas.add(new Arista(new Vertice("A", new Coordinate(0, 0)), new Vertice("C", new Coordinate(2, 2)), 3));
-		aristas.add(new Arista(new Vertice("B", new Coordinate(1, 1)), new Vertice("C", new Coordinate(2, 2)), 2));
-		aristas.add(new Arista(new Vertice("C", new Coordinate(2, 2)), new Vertice("D", new Coordinate(3, 3)), 1));
-		aristas.add(new Arista(new Vertice("B", new Coordinate(1, 1)), new Vertice("D", new Coordinate(3, 3)), 5));
-	}
-	
-	//falta implementar
+        ArrayList<Arista> aristas = new ArrayList<>();
+        aristas.add(aristaAB);
+        aristas.add(aristaAC);
+        aristas.add(aristaBD);
+        aristas.add(aristaCD);
 
+        Grafo grafoResultado = Kruskal.crearKruskal(grafoInicial, aristas);
+        assertEquals(3, grafoResultado.getAristas().size());
+
+        assertTrue(grafoResultado.getAristas().contains(aristaAB));
+        assertTrue(grafoResultado.getAristas().contains(aristaAC));
+        assertTrue(grafoResultado.getAristas().contains(aristaBD));
+
+        assertFalse(grafoResultado.getAristas().contains(aristaCD));
+    }
 }
